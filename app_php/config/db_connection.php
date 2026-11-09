@@ -1,6 +1,6 @@
 <?php
 $host = "10.0.0.225";
-$port = "5432";
+$port = 5432;
 $db   = "rizzoli";
 $user = "webapp";
 $pass = "password";
