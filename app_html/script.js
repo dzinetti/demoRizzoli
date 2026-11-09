@@ -15,9 +15,9 @@ function applyVmTheme() {
     
     // Trova il colore esatto o verifica se l'hostname contiene una parola chiave
     let selectedColor = "#d0e3ff"; // Default
-    if (currentHost.includes("dev")) selectedColor = "#c8ffc8";
-    else if (currentHost.includes("test")) selectedColor = "#fff9c4";
-    else if (currentHost.includes("prod")) selectedColor = "#ffc9d1";
+    if (currentHost.includes("1")) selectedColor = "#c8ffc8";
+    else if (currentHost.includes("2")) selectedColor = "#fff9c4";
+    else if (currentHost.includes("3")) selectedColor = "#ffc9d1";
     
     document.documentElement.style.setProperty('--page-bg-color', selectedColor);
     document.body.style.backgroundColor = selectedColor;
