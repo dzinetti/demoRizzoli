@@ -6,8 +6,8 @@ $user = "webapp";
 $pass = "password";
 
 try {
-    $dsn = "pgsql:host={$HOST};port={$port};dbname={$db}";
-    $conn = new PDO($dsn, $user, $password, [
+    $dsn = "pgsql:host={$host};port={$port};dbname={$db}";
+    $conn = new PDO($dsn, $user, $pass, [
         PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
     ]);
