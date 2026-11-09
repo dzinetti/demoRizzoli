@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <!-- nella dashboard esce la stessa tabella dello studente
+         ma con delle implementazioni:
+         - l'admin o il docente dell'evento ha un tasto modiifica per modificare le inforzioni dell'evento
+         - in fondo alla tabella c'è un bottone aggiungi che ti rimanda ad un form per aggiungere un evento e selezionare lo spazio
+          -->
+
+
+    <!-- Pagina di benvenuto per admin/docente 
+         Deve essere strutturata come la pagina dello studente -->
+
+
+
+    <button id="hamburger" class="hamburger" aria-label="Menu">&#9776;</button>
+    <aside class = "sidebar">
+        <div class="sb-inner">
+            <nav class="nav" aria-label="Navigation">
+                <button class="home-btn" style="font-family: Arial, Helvetica, sans-serif;" onclick="window.location.href='dashboard_admin.html'">SmartCampus</button>
+                <button class="nav-btn" onclick="window.location.href='gestione_eventi.html'" style="color: black;">Gestione eventi</button>
+                <button class="nav-btn" onclick="window.location.href='creazione_eventi.html'" style="color: black;">Creazione eventi</button>
+                <button class="nav-btn" onclick="window.location.href='../app_php/actions/logout.php'" style="color: red;">Logout</button>
+
+            </nav>
+            
+        </div>
+    </aside>
+
+    <div class="main">
+        <h1>Benvenuto, <!--php: aggiugnere nome utente--></h1>
+        <p>Benvenuto nell'area di gestione di SmartCampus! <br>
+            Questo strumento è progettato per darti il pieno controllo 
+            sull'organizzazione delle attività d'istituto. <br>
+            Da qui puoi creare e pianificare eventi, corsi pomeridiani
+             e assemblee in modo intuitivo e veloce. <br>Avrai inoltre una visione 
+             completa sulle prenotazioni di aule magna, laboratori e palestre, <br>
+             permettendoti di coordinare al meglio gli spazi scolastici ed evitare accavallamenti.
+        </p>
+        
+    </div>
+    <script src="script.js"></script>     
+    
+</body>
+</html>

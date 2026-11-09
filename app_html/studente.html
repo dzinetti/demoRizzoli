@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Home</title>
+</head>
+<body>
+    <button id="hamburger" class="hamburger" aria-label="Menu">&#9776;</button>
+    <aside class = "sidebar">
+        <div class="sb-inner">
+            <nav class="nav" aria-label="Navigation">
+                <button class="home-btn" style="font-family: Arial, Helvetica, sans-serif;" onclick="window.location.href='studente.html'">SmartCampus</button>
+                <button class="nav-btn" onclick="window.location.href='eventi.html'" style="color: black;">Eventi</button>
+                <button class="nav-btn" onclick="window.location.href='codiciQR.html'" style="color: black;">QR Attuali</button>
+                <button class="nav-btn" onclick="window.location.href='dashboard.html'" style="color: black;">Le tue prenotazioni</button>
+                <button class="nav-btn" onclick="window.location.href='../app_php/actions/logout.php'" style="color: red;">Logout</button>
+
+            </nav>
+            
+        </div>
+    </aside>
+
+    <div class="main">
+        <h1>Benvenuto, <!--php: aggiugnere nome utente--></h1>
+        <p>Questo è uno strumento intuitivo pensato per rendere semplice e veloce la gestione degli spazi scolastici e l’organizzazione degli eventi interni.
+            Con SmartCampus è possibile prenotare aule magna, laboratori e palestre in pochi click, oltre a gestire assemblee, corsi pomeridiani e conferenze in modo ordinato ed efficiente.
+            La piattaforma è stata sviluppata con un’architettura ibrida che unisce tecnologie diverse, garantendo prestazioni elevate e massima flessibilità. La comunicazione tra i vari servizi avviene tramite API REST, assicurando un sistema moderno, scalabile e facilmente integrabile.
+        </p>
+        
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

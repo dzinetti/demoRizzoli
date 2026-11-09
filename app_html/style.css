@@ -1,0 +1,288 @@
+body {
+  margin: 0;
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+table {
+  max-width: 800px;
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px;
+  font-size: 15px;
+  background: rgba(0,0,0,0.3);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+th {
+  background: gray;
+  color: rgb(0, 0, 0);
+  text-align: left;
+  padding: 12px;
+  font-weight: 600;
+}
+
+td {
+  padding: 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.main{
+  margin-left: 220px; /* spazio per sidebar */
+  flex: 1;
+  height: 100vh;
+  overflow-y: auto; /* 👉 scroll SOLO qui */
+  padding: 28px;
+  justify-content: center;
+}
+
+ .sidebar{
+      position:fixed;
+      width: 220px;
+      flex-shrink: 0;
+      top:0;
+      height:100vh;
+      border-right: 1px solid rgba(255,255,255,.10);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      box-shadow: 0 20px 60px rgba(0,0,0,.25);
+      overflow:hidden;
+    }
+    .sidebar::before{
+      content:"";
+      position:absolute; inset:-2px;
+      background:
+        radial-gradient(520px 260px at 30% 0%, rgba(255, 255, 255, 0.16), transparent 55%);
+      opacity:.9;
+      pointer-events:none;
+    }
+
+    .sb-inner{
+      position:relative;
+      z-index:2;
+      padding: 18px 16px;
+      display:flex;
+      flex-direction:column;
+      gap: 14px;
+      height:100%;
+    }
+
+    .nav{
+      display:flex;
+      flex-direction:column;
+      gap: 6px;
+      margin-top: 4px;
+    }
+    .home-btn {
+      background: transparent;
+      border: none;
+      color: rgb(0, 0, 0);
+      font-size: 20px;
+      font-weight: 700;
+      text-align: left;
+      padding: 10px 8px;
+      cursor: pointer;
+      letter-spacing: 0.5px;
+      transition: all 0.2s ease;
+    }
+    .nav-btn{
+      border:0;
+      background: transparent;
+      cursor:pointer;
+      text-align:left;
+      padding: 11px 12px;
+      border-radius: 14px;
+      color: rgba(114, 114, 114, 0.8);
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(182, 182, 182, 0.548);
+      display:flex; align-items:center; gap:10px;
+      transition: background .12s ease, transform .12s ease, border-color .12s ease;
+    }
+
+    .nav-btn:hover {
+      background: rgba(255,255,255,0.15);
+      color: rgba(126, 126, 126, 0.541);
+      border-color: rgba(95, 83, 83, 0.25);
+    }
+
+    /*.nav-btn:active {
+      transform: scale(0.97);
+      background: rgba(255, 255, 255, 0.438);
+    }*/
+
+    .nav-btn.active {
+      background: rgba(255, 255, 255, 0.35);
+      color: white;
+      border-color: rgb(107, 107, 107);
+      border: 1px solid rgba(104, 104, 104, 0.76);;
+    }
+    .btn-modifica {
+            padding: 10px 20px;
+            /*background-color: #ff9800; /* Arancione per distinguersi 
+            color: white;*/
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .btn-modifica:hover { background-color: #c2b7a6b5; }
+
+        /* --- 2. IL FONDO SCURO DEL POPUP (L'OVERLAY) --- */
+        .sfondo-popup {
+            display: none; /* FONDAMENTALE: Di base il popup è invisibile! */
+            position: fixed; /* Sta fisso sullo schermo anche se scorri la pagina */
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-color: rgba(0, 0, 0, 0.6); /* Nero trasparente al 60% */
+            z-index: 1000; /* Assicura che stia sopra a tutto il resto */
+            
+            /* Usiamo Flexbox per centrare il riquadro bianco perfettamente in mezzo */
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* --- 3. IL RIQUADRO BIANCO DEL POPUP --- */
+        .contenuto-popup {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            position: relative; /* Serve per posizionare la X in alto a destra */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* --- 4. IL TASTO CHIUDI (LA X) --- */
+        .tasto-chiudi {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #888;
+            cursor: pointer;
+        }
+        .tasto-chiudi:hover { color: #333; }
+
+        /* (Stile veloce per il form interno, simile a prima) */
+        .form-gruppo { margin-bottom: 15px; }
+        .form-gruppo label { display: block; margin-bottom: 5px; font-size: 14px; font-weight: bold; }
+        .form-gruppo input { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; }
+        .btn-salva { width: 100%; padding: 12px; background-color: #007BFF; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; }
+    .form-registrazione-container {
+        max-width: 450px;
+        margin: 40px auto; /* Centra il form nella pagina */
+        padding: 30px;
+        background-color: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .form-registrazione-container h2 {
+        text-align: center;
+        color: #333333;
+        margin-top: 0;
+        margin-bottom: 25px;
+        font-size: 24px;
+    }
+
+    .form-gruppo {
+        margin-bottom: 20px;
+    }
+
+    .form-gruppo label {
+        display: block;
+        margin-bottom: 8px;
+        color: #555555;
+        font-weight: 600;
+        font-size: 14px;
+    }
+
+    .form-gruppo input, 
+    .form-gruppo select {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #dcdcdc;
+        border-radius: 6px;
+        box-sizing: border-box; /* Fa in modo che il padding non allarghi l'input */
+        font-size: 15px;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    /* Effetto quando l'utente clicca sul campo per scrivere */
+    .form-gruppo input:focus, 
+    .form-gruppo select:focus {
+        border-color: #007BFF;
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+    }
+
+    .btn-submit {
+        width: 100%;
+        padding: 14px;
+        background-color: #007BFF; /* Colore blu del pulsante, cambialo se serve */
+        color: #ffffff;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.1s ease;
+    }
+
+    .btn-submit:hover {
+        background-color: #0056b3;
+    }
+
+    .btn-submit:active {
+        transform: scale(0.98); /* Piccolo effetto pressione */
+    }
+
+/* Hamburger button */
+.hamburger {
+    display: none;
+    position: fixed;
+    top: 14px;
+    left: 14px;
+    z-index: 1100;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(0,0,0,0.15);
+    border-radius: 8px;
+    font-size: 22px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .sidebar {
+        display: none;
+        z-index: 1050;
+    }
+
+    .sidebar.open {
+        display: block;
+    }
+
+    .main {
+        margin-left: 0;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+}

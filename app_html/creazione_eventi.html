@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="hamburger" class="hamburger" aria-label="Menu">&#9776;</button>
+    <aside class="sidebar">
+      <div class="sb-inner">
+        <nav class="nav" aria-label="Navigation">
+          <button
+            class="home-btn"
+            style="font-family: Arial, Helvetica, sans-serif"
+            onclick="window.location.href = 'dashboard_admin.html'"
+          >
+            SmartCampus
+          </button>
+          <button
+            class="nav-btn"
+            onclick="window.location.href = 'gestione_eventi.html'"
+            style="color: black"
+          >
+            Gestione eventi
+          </button>
+          <button
+            class="nav-btn active"
+            onclick="window.location.href = 'creazione_eventi.html'"
+            style="color: black"
+          >
+            Creazione eventi
+          </button>
+          <button
+            class="nav-btn"
+            onclick="window.location.href = '../app_php/actions/logout.php'"
+            style="color: red"
+          >
+            Logout
+          </button>
+        </nav>
+      </div>
+    </aside>
+    <div class="main">
+      <h1>Benvenuto nella registrazione dell'evento</h1>
+      <!-- from registrazione evento -->
+      <div class="form-registrazione-container">
+        <h2>Dettagli Evento</h2>
+
+        <form action="" method="POST">
+          <div class="form-gruppo">
+            <label for="nome">Nome evento</label>
+            <input
+              type="text"
+              name="nome"
+              id="nome"
+              placeholder="Inserisci il nome dell'evento"
+              required
+            />
+
+            <label for="tipologia">Tipologia</label>
+            <select name="tipologia" id="tipologia" required>
+              <option value="" disabled selected>Scegli una tipologia</option>
+              <option value="">
+                <!-- inserite le tipologie da poter scegliere -->
+              </option>
+              <!-- in alternativa si può fare un input text per farla inserire all'utente -->
+            </select>
+
+            <label for="descrizione">Descrizione evento</label>
+            <input
+              type="text"
+              name="descrizione"
+              id="descrizione"
+              placeholder="Inserisci la descrizione dell'evento"
+              required
+            />
+
+            <label for="spazio">Seleziona lo spazio</label>
+            <select name="spazio" id="spazio" required>
+              <option value="" disabled selected>Scegli uno spazio</option>
+              <option value="">
+                <!-- inserite i nomi delle aule da poter selezionare per l'evento -->
+              </option>
+              <!-- <option value="laboratorio_1">Laboratorio 1</option> -->
+            </select>
+          </div>
+
+          <button type="submit" class="btn-submit">Registra Evento</button>
+        </form>
+      </div>
+    </div>
+    <!-- checkbox per lo spazio -->
+    <script src="script.js"></script>
+  </body>
+</html>

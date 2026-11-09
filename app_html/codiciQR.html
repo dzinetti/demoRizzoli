@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Home</title>
+  </head>
+  <body>
+    <button id="hamburger" class="hamburger" aria-label="Menu">&#9776;</button>
+    <aside class="sidebar">
+      <div class="sb-inner">
+        <nav class="nav" aria-label="Navigation">
+          <button
+            class="home-btn"
+            style="font-family: Arial, Helvetica, sans-serif"
+            onclick="window.location.href = 'studente.html'"
+          >
+            SmartCampus
+          </button>
+          <button
+            class="nav-btn"
+            onclick="window.location.href = 'eventi.html'"
+            style="color: black"
+          >
+            Eventi
+          </button>
+          <button
+            class="nav-btn active"
+            onclick="window.location.href = 'codiciQR.html'"
+            style="color: black"
+          >
+            QR Attuali
+          </button>
+          <button
+            class="nav-btn"
+            onclick="window.location.href = 'dashboard.html'"
+            style="color: black"
+          >
+            Le tue prenotazioni
+          </button>
+          <button
+            class="nav-btn"
+            onclick="window.location.href = '../app_php/actions/logout.php'"
+            style="color: red"
+          >
+            Logout
+          </button>
+        </nav>
+      </div>
+    </aside>
+
+    <div class="main">
+      <h1>Attiva i tuoi QR</h1>
+      <div class="qr-container">
+        <div class="qr-card">
+          <img src="QR_Code_example.png" alt="QR Code" />
+          <div class="qr-info">
+            <h3>Assemblea di istituto</h3>
+            <hr
+              style="
+                border: none;
+                border-top: 1px solid rgba(0, 0, 0, 0.2);
+                margin: 10px 0;
+              "
+            />
+            <h4>10 Maggio 2026</h4>
+            <h4>Aula Magna</h4>
+          </div>
+        </div>
+
+        <div class="qr-card">
+          <img src="QR_Code_example.png" alt="QR Code" />
+          <div class="qr-info">
+            <h3>Assemblea di istituto</h3>
+            <hr
+              style="
+                border: none;
+                border-top: 1px solid rgba(0, 0, 0, 0.2);
+                margin: 10px 0;
+              "
+            />
+            <h4>10 Maggio 2026</h4>
+            <h4>Aula Magna</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

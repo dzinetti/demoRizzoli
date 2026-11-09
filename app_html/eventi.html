@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Eventi</title>
+</head>
+<body>
+    <button id="hamburger" class="hamburger" aria-label="Menu">&#9776;</button>
+    <aside class = "sidebar">
+        <div class="sb-inner">
+            <nav class="nav" aria-label="Navigation">
+                <button class="home-btn" style="font-family: Arial, Helvetica, sans-serif;" onclick="window.location.href='studente.html'">SmartCampus</button>
+                <button class="nav-btn active" onclick="window.location.href='eventi.html'" style="color: black;">Eventi</button>
+                <button class="nav-btn" onclick="window.location.href='codiciQR.html'" style="color: black;">QR Attuali</button>
+                <button class="nav-btn" onclick="window.location.href='dashboard.html'" style="color: black;">Le tue prenotazioni</button>
+                <button class="nav-btn" onclick="window.location.href='../app_php/actions/logout.php'" style="color: red;">Logout</button>
+
+            </nav>
+            
+        </div>
+    </aside>
+
+    <div class="main">
+        <h1>Eventi</h1>
+        <table>
+            <tr>
+                <th>Evento</th>
+                <th>Luogo</th>
+                <th>Data</th>
+                <th></th>
+            </tr>
+            <tr>
+                <td><!--php--></td>
+                <td><!--php--></td>
+                <td><!--php--></td>
+                <td><button class="prenota-btn">Prenota</button></td>
+            </tr>
+            <tr>
+                <td><!--php--></td>
+                <td><!--php--></td>
+                <td><!--php--></td>
+                <td><button class="prenota-btn">Prenota</button></td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        document.querySelectorAll('.prenota-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                btn.innerText = "Prenotato";
+                btn.disabled = true;
+            });
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

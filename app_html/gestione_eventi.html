@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="hamburger" class="hamburger" aria-label="Menu">&#9776;</button>
+    <aside class="sidebar">
+      <div class="sb-inner">
+        <nav class="nav" aria-label="Navigation">
+          <button
+            class="home-btn"
+            style="font-family: Arial, Helvetica, sans-serif"
+            onclick="window.location.href = 'dashboard_admin.html'"
+          >
+            SmartCampus
+          </button>
+          <button
+            class="nav-btn active"
+            onclick="window.location.href = 'gestione_eventi.html'"
+            style="color: black"
+          >
+            Gestione eventi
+          </button>
+          <button
+            class="nav-btn"
+            onclick="window.location.href = 'creazione_eventi.html'"
+            style="color: black"
+          >
+            Creazione eventi
+          </button>
+          <button
+            class="nav-btn"
+            onclick="window.location.href = '../app_php/actions/logout.php'"
+            style="color: red"
+          >
+            Logout
+          </button>
+        </nav>
+      </div>
+    </aside>
+    <div class="main">
+      <h1>Eventi</h1>
+      <table>
+        <tr>
+          <th>Evento</th>
+          <th>Spazio</th>
+          <th>Tipologia</th>
+          <th>Descrizione</th>
+          <th></th>
+        </tr>
+        <tr>
+          <td><!--php--></td>
+          <td><!--php--></td>
+          <td><!--php--></td>
+          <td></td>
+          <td>
+            <button class="bottoneApri btn-modifica">Modifica Evento</button>
+          </td>
+          <!-- Se l'admin o docente del corso schiaccia il bottone, deve poter modificare l'evento  -->
+        </tr>
+      </table>
+    </div>
+    <div id="mioPopup" class="sfondo-popup">
+      <div class="contenuto-popup">
+        <span id="tastoChiudi" class="tasto-chiudi">&times;</span>
+        <h3 style="margin-top: 0">Modifica Dati</h3>
+
+        <form action="#" method="POST">
+          <div class="form-gruppo">
+            <label for="nome">Nome evento</label>
+            <input
+              type="text"
+              name="nome"
+              id="nome"
+              placeholder="Inserisci il nome dell'evento"
+              required
+            /><!-- In value ci metti il nome dell'evento preso da quella riga della tabella -->
+          </div>
+          <div class="form-gruppo">
+            <label for="tipologia">Tipologia</label>
+            <select name="tipologia" id="tipologia" required>
+              <option value="" disabled selected>Scegli una tipologia</option>
+              <option value="">
+                <!-- inserite le tipologie da poter scegliere -->
+              </option>
+              <!-- in alternativa si può fare un input text per farla inserire all'utente -->
+            </select>
+          </div>
+          <div class="form-gruppo">
+            <label for="descrizione">Descrizione evento</label>
+            <input
+              type="text"
+              name="descrizione"
+              id="descrizione"
+              placeholder="Inserisci la descrizione dell'evento"
+              required
+            />
+          </div>
+          <div class="form-gruppo">
+            <label for="spazio">Spazio Prenotato</label>
+            <select name="spazio" id="spazio" required>
+              <!-- appena esce il popup, deve visualizzare lo spazio assegnato a quell'evento, che poi potrà modificare -->
+              <option value="" disabled selected>Scegli uno spazio</option>
+              <option value="">
+                <!-- inserite i nomi delle aule da poter selezionare per l'evento -->
+              </option>
+            </select>
+          </div>
+          <button type="submit" class="btn-salva">Salva Modifiche</button>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      // 1. Diciamo al codice quali elementi prendere dall'HTML
+      const popup = document.getElementById("mioPopup");
+      const bottoniApri = document.querySelectorAll(".bottoneApri");
+      const tastoChiudi = document.getElementById("tastoChiudi");
+
+      bottoniApri.forEach(function (bottone) {
+        bottone.addEventListener("click", function () {
+          popup.style.display = "flex";
+        });
+      });
+
+      tastoChiudi.onclick = function () {
+        popup.style.display = "none";
+      };
+
+      window.onclick = function (event) {
+        if (event.target == popup) {
+          popup.style.display = "none";
+        }
+      };
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>
